@@ -1,0 +1,31 @@
+enable
+configure terminal
+ip default-gateway 172.16.0.1
+vlan 88
+name SERVIDORES
+exit
+vlan 200
+name VOZ
+exit
+vlan 90
+name TACACS
+exit
+vlan 88
+name MONITORAMENTO
+exit
+interface fastEthernet 0/1
+switchport mode access 
+switchport access vlan 88
+exit
+interface fastEthernet 0/10
+switchport mode access
+switchport access vlan 200
+exit
+interface fastEthernet 0/13
+switchport mode access
+switchport access vlan 90
+exit
+interface fastEthernet 0/15
+switchport mode access
+switchport access vlan 88
+do wr

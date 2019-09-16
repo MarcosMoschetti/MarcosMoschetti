@@ -1,0 +1,31 @@
+enable
+configure terminal
+ip default-gateway 192.168.0.1
+vlan 10
+name TESTES
+exit
+vlan 20
+name TELEMARKETING
+exit
+vlan 30
+name CONSULTORES
+exit
+vlan 40
+name RH
+exit
+interface fastEthernet 0/1
+switchport mode access 
+switchport access vlan 10
+exit
+interface fastEthernet 0/10
+switchport mode access
+switchport access vlan 20
+exit
+interface fastEthernet 0/18
+switchport mode access
+switchport access vlan 30
+exit
+interface fastEthernet 0/23
+switchport mode access
+switchport access vlan 40
+do wr

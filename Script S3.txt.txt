@@ -1,0 +1,31 @@
+enable
+configure terminal
+ip default-gateway 192.168.32.1 
+vlan 80
+name FINANCAS
+exit
+vlan 60
+name OPERACOES
+exit
+vlan 88
+name RELOGIOS
+exit
+vlan 100
+name LIVRE
+exit
+interface fastEthernet 0/1
+switchport mode access 
+switchport access vlan 80
+exit
+interface fastEthernet 0/6
+switchport mode access
+switchport access vlan 60
+exit
+interface fastEthernet 0/10
+switchport mode access
+switchport access vlan 88
+exit
+interface fastEthernet 0/20
+switchport mode access
+switchport access vlan 100
+do wr

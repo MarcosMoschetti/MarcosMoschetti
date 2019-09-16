@@ -1,0 +1,23 @@
+Router 4
+
+enable
+configure terminal
+interface gigabitethernet 0/1
+no shutdown
+ip address 172.16.0.1 255.240.0.0
+interface serial 0/0/1
+no shutdown
+interface serial 0/1/1
+no shutdown
+interface serial 0/1/1
+no shutdown
+interface serial 0/0/1
+ip address 201.187.89.14 255.255.255.252
+interface serial 0/0/0
+ip address 201.187.89.2 255.255.255.252
+interface serial 0/1/1
+ip address 201.187.89.18 255.255.255.252
+exit
+ip route 192.168.32.0 255.255.248.0 201.187.89.13
+ip route 192.168.0.0 255.255.224.0 201.187.89.1
+ip route 10.0.0.0 255.0.0.0 201.187.89.18

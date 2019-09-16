@@ -1,0 +1,31 @@
+enable
+configure terminal 
+ip default-gateway 10.0.0.1
+vlan 50
+name ANALISTAS
+exit
+vlan 60
+name OPERACAO
+exit
+vlan 70
+name TI
+exit
+vlan 80
+name ADMINISTRATIVO
+exit
+interface fastEthernet 0/1
+switchport mode access 
+switchport access vlan 50
+exit
+interface fastEthernet 0/24
+switchport mode access
+switchport access vlan 60
+exit
+interface fastEthernet 0/21
+switchport mode access
+switchport access vlan 70
+exit
+interface fastEthernet 0/22
+switchport mode access
+switchport access vlan 80
+do wr

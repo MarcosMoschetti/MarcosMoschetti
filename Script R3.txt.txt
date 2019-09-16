@@ -1,0 +1,24 @@
+Route 3
+
+enable
+configure terminal
+interface gigabitethernet 0/1
+no shutdown
+ip address 192.168.32.1 255.255.248.0
+interface serial 0/0/1
+no shutdown
+interface serial 0/0/0
+no shutdown
+interface serial 0/1/1
+no shutdown
+interface serial 0/0/1
+ip address 201.187.89.13 255.255.255.252
+interface serial 0/0/0
+ip address 201.187.89.10 255.255.255.252
+interface serial 0/1/1
+ip address 201.187.89.22 255.255.255.252
+exit
+ip route 172.16.0.0 255.240.0.0 201.187.89.14
+ip route 192.168.0.0 255.255.224.0 201.187.89.21
+ip router 10.0.0.0 255.0.0.0 201.187.89.5
+do wr
